@@ -1,6 +1,10 @@
 MIT License
 
-Copyright (c) 2025 CoplayDev
+Copyright (c) 2025 cnrgrsc
+Copyright (c) 2025 CoplayDev (Original MCP for Unity)
+
+This project is based on MCP for Unity (https://github.com/CoplayDev/unity-mcp)
+by CoplayDev, enhanced with additional game development tools.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

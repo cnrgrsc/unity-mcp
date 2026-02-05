@@ -1,11 +1,11 @@
 {
-  "name": "com.coplaydev.unity-mcp",
-  "version": "9.4.0-beta.1",
-  "displayName": "MCP for Unity",
-  "description": "A bridge that connects AI assistants to Unity via the MCP (Model Context Protocol). Allows AI clients like Claude Code, Cursor, and VSCode to directly control your Unity Editor for enhanced development workflows.\n\nFeatures automated setup wizard, cross-platform support, and seamless integration with popular AI development tools.\n\nJoin Our Discord: https://discord.gg/y4p8KfzrN4",
+  "name": "com.cnrgrsc.devbridge",
+  "version": "1.0.0",
+  "displayName": "DevBridge",
+  "description": "AI-Powered Unity Development Toolkit. Connect your AI assistant (Claude, Cursor, VS Code) directly to Unity Editor for next-level game development. Includes advanced tools for Physics, Animation, Navigation, Audio, Input, and UI systems.\n\nBased on MCP for Unity by CoplayDev.",
   "unity": "2021.3",
-  "documentationUrl": "https://github.com/CoplayDev/unity-mcp",
-  "licensesUrl": "https://github.com/CoplayDev/unity-mcp/blob/main/LICENSE",
+  "documentationUrl": "https://github.com/cnrgrsc/unity-mcp",
+  "licensesUrl": "https://github.com/cnrgrsc/unity-mcp/blob/beta/LICENSE",
   "dependencies": {
     "com.unity.nuget.newtonsoft-json": "3.0.2"
   },
@@ -15,12 +15,17 @@
     "llm",
     "mcp",
     "model-context-protocol",
-    "mcp-server",
-    "mcp-client"
+    "game-development",
+    "devbridge",
+    "physics",
+    "animation",
+    "navigation",
+    "audio",
+    "input",
+    "ui"
   ],
   "author": {
-    "name": "Coplay",
-    "email": "support@coplay.dev",
-    "url": "https://coplay.dev"
+    "name": "cnrgrsc",
+    "url": "https://github.com/cnrgrsc"
   }
 }

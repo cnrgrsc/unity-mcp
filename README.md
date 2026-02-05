@@ -1,99 +1,135 @@
-<img width="676" height="380" alt="MCP for Unity" src="docs/images/logo.png" />
+<img width="676" height="380" alt="DevBridge" src="docs/images/devbridge-logo.png" />
 
-| [English](README.md) | [简体中文](docs/i18n/README-zh.md) |
-|----------------------|---------------------------------|
+<div align="center">
 
-#### Proudly sponsored and maintained by [Coplay](https://www.coplay.dev/?ref=unity-mcp) -- the best AI assistant for Unity.
+# 🌉 DevBridge
 
-[![Discord](https://img.shields.io/badge/discord-join-red.svg?logo=discord&logoColor=white)](https://discord.gg/y4p8KfzrN4)
-[![](https://img.shields.io/badge/Website-Visit-purple)](https://www.coplay.dev/?ref=unity-mcp)
-[![](https://img.shields.io/badge/Unity-000000?style=flat&logo=unity&logoColor=blue 'Unity')](https://unity.com/releases/editor/archive)
-[![Unity Asset Store](https://img.shields.io/badge/Unity%20Asset%20Store-Get%20Package-FF6A00?style=flat&logo=unity&logoColor=white)](https://assetstore.unity.com/packages/tools/generative-ai/mcp-for-unity-ai-driven-development-329908)
-[![python](https://img.shields.io/badge/Python-3.10+-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-[![](https://badge.mcpx.dev?status=on 'MCP Enabled')](https://modelcontextprotocol.io/introduction)
-[![](https://img.shields.io/badge/License-MIT-red.svg 'MIT License')](https://opensource.org/licenses/MIT)
+### AI-Powered Unity Development Toolkit
 
-**Create your Unity apps with LLMs!** MCP for Unity bridges AI assistants (Claude, Cursor, VS Code, etc.) with your Unity Editor via the [Model Context Protocol](https://modelcontextprotocol.io/introduction). Give your LLM the tools to manage assets, control scenes, edit scripts, and automate tasks.
+**Connect your AI assistant directly to Unity Editor for next-level game development**
 
-<img alt="MCP for Unity building a scene" src="docs/images/building_scene.gif">
+[![GitHub](https://img.shields.io/badge/GitHub-cnrgrsc-181717?style=for-the-badge&logo=github)](https://github.com/cnrgrsc/unity-mcp)
+[![Unity](https://img.shields.io/badge/Unity-2021.3+-000000?style=for-the-badge&logo=unity)](https://unity.com/releases/editor/archive)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![MCP](https://img.shields.io/badge/MCP-Enabled-8B5CF6?style=for-the-badge)](https://modelcontextprotocol.io)
+
+[🚀 Quick Start](#-quick-start) • [✨ Features](#-features) • [📖 Documentation](#-documentation) • [🤝 Contributing](#-contributing)
+
+</div>
 
 ---
 
-## Quick Start
+## 🎯 What is DevBridge?
+
+**DevBridge** is an advanced AI bridge that connects your favorite AI assistants (Claude, Cursor, VS Code, Gemini, etc.) to Unity Editor via the [Model Context Protocol](https://modelcontextprotocol.io). It goes beyond basic automation — DevBridge gives AI the power to:
+
+- 🎮 **Create complete game mechanics** (physics, navigation, animations)
+- 🎨 **Design UI systems** with AI assistance
+- 🔊 **Implement audio systems** seamlessly
+- 🎯 **Build input handling** for any platform
+- ⚡ **Automate repetitive tasks** 10-100x faster
+
+> 💡 **Based on [MCP for Unity](https://github.com/CoplayDev/unity-mcp) by CoplayDev** — enhanced with game development superpowers!
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-* **Unity 2021.3 LTS+** — [Download Unity](https://unity.com/download)
-* **Python 3.10+** and **uv** — [Install uv](https://docs.astral.sh/uv/getting-started/installation/)
-* **An MCP Client** — [Claude Desktop](https://claude.ai/download) | [Cursor](https://www.cursor.com/en/downloads) | [VS Code Copilot](https://code.visualstudio.com/docs/copilot/overview) | [GitHub Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli) | [Windsurf](https://windsurf.com)
+| Requirement | Link |
+|-------------|------|
+| **Unity 2021.3 LTS+** | [Download](https://unity.com/download) |
+| **Python 3.10+** | [Download](https://www.python.org/downloads/) |
+| **uv** (Python package manager) | [Install](https://docs.astral.sh/uv/getting-started/installation/) |
+| **MCP Client** | Claude Desktop / Cursor / VS Code / Windsurf |
 
-### 1. Install the Unity Package
+### 1️⃣ Install Unity Package
 
-In Unity: `Window > Package Manager > + > Add package from git URL...`
+Open Unity → `Window > Package Manager > + > Add package from git URL...`
 
-> [!TIP]
-> ```text
-> https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
-> ```
-
-**Want the latest beta?** Use the beta branch:
-```text
-https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#beta
+```
+https://github.com/cnrgrsc/unity-mcp.git?path=/MCPForUnity#beta
 ```
 
-<details>
-<summary>Other install options (Asset Store, OpenUPM)</summary>
+### 2️⃣ Start the Server
 
-**Unity Asset Store:**
-1. Visit [MCP for Unity on the Asset Store](https://assetstore.unity.com/packages/tools/generative-ai/mcp-for-unity-ai-driven-development-329908)
-2. Click `Add to My Assets`, then import via `Window > Package Manager`
+1. In Unity: `Window > DevBridge`
+2. Click **Start Server** 
+3. Select your MCP Client and click **Configure**
+4. Look for 🟢 **Connected ✓**
 
-**OpenUPM:**
-```bash
-openupm add com.coplaydev.unity-mcp
-```
-</details>
+### 3️⃣ Start Building!
 
-### 2. Start the Server & Connect
-
-1. In Unity: `Window > MCP for Unity`
-2. Click **Start Server** (launches HTTP server on `localhost:8080`)
-3. Select your MCP Client from the dropdown and click **Configure**
-4. Look for 🟢 "Connected ✓"
-5. **Connect your client:** Some clients (Cursor, Windsurf, Antigravity) require enabling an MCP toggle in settings, while others (Claude Desktop, Claude Code) auto-connect after configuration.
-
-**That's it!** Try a prompt like: *"Create a red, blue and yellow cube"* or *"Build a simple player controller"*
+Try these prompts with your AI:
+- *"Create a player with physics-based movement"*
+- *"Add a navigation system with AI pathfinding"*
+- *"Build a complete UI menu with animations"*
+- *"Create an audio manager with 3D spatial sound"*
 
 ---
 
-<details>
-<summary><strong>Features & Tools</strong></summary>
+## ✨ Features
 
-### Key Features
-* **Natural Language Control** — Instruct your LLM to perform Unity tasks
-* **Powerful Tools** — Manage assets, scenes, materials, scripts, and editor functions
-* **Automation** — Automate repetitive Unity workflows
-* **Extensible** — Works with various MCP Clients
+### 🎮 Game Development Tools
 
-### Available Tools
-`manage_asset` • `manage_editor` • `manage_gameobject` • `manage_components` • `manage_material` • `manage_prefabs` • `manage_scene` • `manage_script` • `manage_scriptable_object` • `manage_shader` • `manage_vfx` • `manage_texture` • `batch_execute` • `find_gameobjects` • `find_in_file` • `read_console` • `refresh_unity` • `run_tests` • `get_test_job` • `execute_menu_item` • `apply_text_edits` • `script_apply_edits` • `validate_script` • `create_script` • `delete_script` • `get_sha`
+DevBridge includes **exclusive game development tools** not found in the original:
 
-### Available Resources
-`custom_tools` • `unity_instances` • `menu_items` • `get_tests` • `gameobject` • `gameobject_components` • `prefab_api` • `prefab_info` • `prefab_hierarchy` • `editor_state` • `editor_selection` • `editor_prefab_stage` • `project_info` • `project_tags` • `project_layers`
+| Tool | Description | Status |
+|------|-------------|--------|
+| `manage_physics` | Rigidbodies, colliders, joints, raycasting | ✅ Ready |
+| `manage_animation` | Animators, clips, state machines, blend trees | ✅ Ready |
+| `manage_navigation` | NavMesh, AI agents, pathfinding, obstacles | ✅ Ready |
+| `manage_audio` | Audio sources, mixers, 3D spatial audio | ✅ Ready |
+| `manage_input` | Input System, action maps, control schemes | ✅ Ready |
+| `manage_ui` | Canvas, UI elements, layouts, interactions | ✅ Ready |
 
-**Performance Tip:** Use `batch_execute` for multiple operations — it's 10-100x faster than individual calls!
-</details>
+### 🛠️ Core Tools
+
+All the essential Unity automation tools:
+
+| Category | Tools |
+|----------|-------|
+| **Assets** | `manage_asset` • `manage_prefabs` • `manage_material` • `manage_texture` |
+| **Scene** | `manage_scene` • `manage_gameobject` • `manage_components` • `find_gameobjects` |
+| **Scripts** | `manage_script` • `script_apply_edits` • `validate_script` • `create_script` |
+| **Editor** | `manage_editor` • `execute_menu_item` • `read_console` • `refresh_unity` |
+| **Advanced** | `manage_vfx` • `manage_shader` • `manage_scriptable_object` • `batch_execute` |
+
+### ⚡ Performance
+
+Use `batch_execute` for **10-100x faster** multi-object operations!
+
+---
+
+## 🏆 DevBridge vs Competition
+
+| Feature | DevBridge | Others |
+|---------|-----------|--------|
+| Physics System Control | ✅ Full | ❌ None |
+| Animation System | ✅ Complete | ❌ Limited |
+| Navigation/AI | ✅ NavMesh + Agents | ❌ None |
+| Audio Management | ✅ 3D Spatial | ❌ None |
+| Input System | ✅ New Input System | ❌ None |
+| UI Building | ✅ Full Canvas | ❌ Basic |
+| Batch Operations | ✅ 10-100x faster | ⚠️ Slower |
+| Open Source | ✅ MIT License | ⚠️ Varies |
+
+---
+
+## 📖 Documentation
 
 <details>
 <summary><strong>Manual Configuration</strong></summary>
 
-If auto-setup doesn't work, add this to your MCP client's config file:
+If auto-setup doesn't work, add this to your MCP client's config:
 
-**HTTP (default — works with Claude Desktop, Cursor, Windsurf):**
+**HTTP (Claude Desktop, Cursor, Windsurf):**
 ```json
 {
   "mcpServers": {
-    "unityMCP": {
+    "devBridge": {
       "url": "http://localhost:8080/mcp"
     }
   }
@@ -104,144 +140,65 @@ If auto-setup doesn't work, add this to your MCP client's config file:
 ```json
 {
   "servers": {
-    "unityMCP": {
+    "devBridge": {
       "type": "http",
       "url": "http://localhost:8080/mcp"
     }
   }
 }
 ```
-
-<details>
-<summary>Stdio configuration (uvx)</summary>
-
-**macOS/Linux:**
-```json
-{
-  "mcpServers": {
-    "unityMCP": {
-      "command": "uvx",
-      "args": ["--from", "mcpforunityserver", "mcp-for-unity", "--transport", "stdio"]
-    }
-  }
-}
-```
-
-**Windows:**
-```json
-{
-  "mcpServers": {
-    "unityMCP": {
-      "command": "C:/Users/YOUR_USERNAME/AppData/Local/Microsoft/WinGet/Links/uvx.exe",
-      "args": ["--from", "mcpforunityserver", "mcp-for-unity", "--transport", "stdio"]
-    }
-  }
-}
-```
-</details>
 </details>
 
 <details>
 <summary><strong>Multiple Unity Instances</strong></summary>
 
-MCP for Unity supports multiple Unity Editor instances. To target a specific one:
+DevBridge supports multiple Unity Editor instances:
 
-1. Ask your LLM to check the `unity_instances` resource
-2. Use `set_active_instance` with the `Name@hash` (e.g., `MyProject@abc123`)
-3. All subsequent tools route to that instance
-</details>
-
-<details>
-<summary><strong>Roslyn Script Validation (Advanced)</strong></summary>
-
-For **Strict** validation that catches undefined namespaces, types, and methods:
-
-1. Install [NuGetForUnity](https://github.com/GlitchEnzo/NuGetForUnity)
-2. `Window > NuGet Package Manager` → Install `Microsoft.CodeAnalysis` v5.0
-3. Also install `SQLitePCLRaw.core` and `SQLitePCLRaw.bundle_e_sqlite3` v3.0.2
-4. Add `USE_ROSLYN` to `Player Settings > Scripting Define Symbols`
-5. Restart Unity
-
-  <details>
-  <summary>Manual DLL installation (if NuGetForUnity isn't available)</summary>
-
-  1. Download `Microsoft.CodeAnalysis.CSharp.dll` and dependencies from [NuGet](https://www.nuget.org/packages/Microsoft.CodeAnalysis.CSharp/)
-  2. Place DLLs in `Assets/Plugins/` folder
-  3. Ensure .NET compatibility settings are correct
-  4. Add `USE_ROSLYN` to Scripting Define Symbols
-  5. Restart Unity
-  </details>
+1. Ask your AI to check `unity_instances` resource
+2. Use `set_active_instance` with `Name@hash`
+3. All commands route to that instance
 </details>
 
 <details>
 <summary><strong>Troubleshooting</strong></summary>
 
-* **Unity Bridge Not Connecting:** Check `Window > MCP for Unity` status, restart Unity
-* **Server Not Starting:** Verify `uv --version` works, check the terminal for errors
-* **Client Not Connecting:** Ensure the HTTP server is running and the URL matches your config
-
-**Detailed setup guides:**
-* [Fix Unity MCP and Cursor, VSCode & Windsurf](https://github.com/CoplayDev/unity-mcp/wiki/1.-Fix-Unity-MCP-and-Cursor,-VSCode-&-Windsurf) — uv/Python installation, PATH issues
-* [Fix Unity MCP and Claude Code](https://github.com/CoplayDev/unity-mcp/wiki/2.-Fix-Unity-MCP-and-Claude-Code) — Claude CLI installation
-* [Common Setup Problems](https://github.com/CoplayDev/unity-mcp/wiki/3.-Common-Setup-Problems) — macOS dyld errors, FAQ
-
-Still stuck? [Open an Issue](https://github.com/CoplayDev/unity-mcp/issues) or [Join Discord](https://discord.gg/y4p8KfzrN4)
-</details>
-
-<details>
-<summary><strong>Contributing</strong></summary>
-
-See [README-DEV.md](docs/development/README-DEV.md) for development setup. For custom tools, see [CUSTOM_TOOLS.md](docs/reference/CUSTOM_TOOLS.md).
-
-1. Fork → Create issue → Branch (`feature/your-idea`) → Make changes → PR
-</details>
-
-<details>
-<summary><strong>Telemetry & Privacy</strong></summary>
-
-Anonymous, privacy-focused telemetry (no code, no project names, no personal data). Opt out with `DISABLE_TELEMETRY=true`. See [TELEMETRY.md](docs/reference/TELEMETRY.md).
+- **Unity Bridge Not Connecting:** Check `Window > DevBridge` status
+- **Server Not Starting:** Run `uv --version` to verify installation
+- **Client Not Connecting:** Ensure HTTP server is running on port 8080
 </details>
 
 ---
 
-**License:** MIT — See [LICENSE](LICENSE) | **Need help?** [Discord](https://discord.gg/y4p8KfzrN4) | [Issues](https://github.com/CoplayDev/unity-mcp/issues)
+## 🤝 Contributing
+
+Contributions are welcome! 
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ---
 
-## Star History
+## 📜 License
 
-[![Star History Chart](https://api.star-history.com/svg?repos=CoplayDev/unity-mcp&type=Date)](https://www.star-history.com/#CoplayDev/unity-mcp&Date)
+MIT License — see [LICENSE](LICENSE)
 
-<details>
-<summary><strong>Citation for Research</strong></summary>
-If you are working on research that is related to Unity-MCP, please cite us!
+> **Attribution:** This project is based on [MCP for Unity](https://github.com/CoplayDev/unity-mcp) by CoplayDev, enhanced with additional game development tools.
 
-```bibtex
-@inproceedings{10.1145/3757376.3771417,
-author = {Wu, Shutong and Barnett, Justin P.},
-title = {MCP-Unity: Protocol-Driven Framework for Interactive 3D Authoring},
-year = {2025},
-isbn = {9798400721366},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3757376.3771417},
-doi = {10.1145/3757376.3771417},
-series = {SA Technical Communications '25}
-}
-```
-</details>
+---
 
-## Unity AI Tools by Coplay
+## 🌟 Star History
 
-Coplay offers 3 AI tools for Unity:
-- **MCP for Unity** is available freely under the MIT license.
-- **Coplay** is a premium Unity AI assistant that sits within Unity and is more than the MCP for Unity.
-- **Coplay MCP** a free-for-now MCP for Coplay tools.
+If you find DevBridge useful, please consider giving it a ⭐!
 
-(These tools have different tech stacks. See this blog post [comparing Coplay to MCP for Unity](https://coplay.dev/blog/coplay-vs-coplay-mcp-vs-unity-mcp).)
+---
 
-<img alt="Coplay" src="docs/images/coplay-logo.png" />
+<div align="center">
 
-## Disclaimer
+**Made with ❤️ by [cnrgrsc](https://github.com/cnrgrsc)**
 
-This project is a free and open-source tool for the Unity Editor, and is not affiliated with Unity Technologies.
+*DevBridge — Building the bridge between AI and Unity*
+
+</div>

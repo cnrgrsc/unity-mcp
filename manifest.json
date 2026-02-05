@@ -1,20 +1,25 @@
 {
-  "manifest_version": "0.3",
-  "name": "Unity MCP",
-  "version": "9.3.1",
-  "description": "AI-powered Unity Editor automation via MCP - manage GameObjects, scripts, materials, scenes, prefabs, VFX, and run tests",
+  "manifest_version": "1.0",
+  "name": "DevBridge",
+  "version": "1.0.0",
+  "description": "AI-Powered Unity Development Toolkit - Connect AI assistants to Unity Editor for game development with Physics, Animation, Navigation, Audio, Input, and UI systems",
   "author": {
-    "name": "Coplay",
-    "url": "https://www.coplay.dev"
+    "name": "cnrgrsc",
+    "url": "https://github.com/cnrgrsc"
   },
   "repository": {
     "type": "git",
+    "url": "https://github.com/cnrgrsc/unity-mcp"
+  },
+  "homepage": "https://github.com/cnrgrsc/unity-mcp",
+  "documentation": "https://github.com/cnrgrsc/unity-mcp#readme",
+  "support": "https://github.com/cnrgrsc/unity-mcp/issues",
+  "icon": "devbridge-logo.png",
+  "based_on": {
+    "name": "MCP for Unity",
+    "author": "CoplayDev",
     "url": "https://github.com/CoplayDev/unity-mcp"
   },
-  "homepage": "https://www.coplay.dev",
-  "documentation": "https://github.com/CoplayDev/unity-mcp#readme",
-  "support": "https://github.com/CoplayDev/unity-mcp/issues",
-  "icon": "coplay-logo.png",
   "server": {
     "type": "python",
     "entry_point": "Server/src/main.py",
@@ -30,120 +35,135 @@
   },
   "tools": [
     {
+      "name": "manage_physics",
+      "description": "Manage Rigidbodies, Colliders, Joints, and Physics settings",
+      "category": "game_development",
+      "new": true
+    },
+    {
+      "name": "manage_animation",
+      "description": "Control Animators, Animation Clips, State Machines, and Blend Trees",
+      "category": "game_development",
+      "new": true
+    },
+    {
+      "name": "manage_navigation",
+      "description": "NavMesh baking, AI agents, pathfinding, and obstacles",
+      "category": "game_development",
+      "new": true
+    },
+    {
+      "name": "manage_audio",
+      "description": "Audio Sources, Mixers, 3D spatial audio, and sound management",
+      "category": "game_development",
+      "new": true
+    },
+    {
+      "name": "manage_input",
+      "description": "Input System, Action Maps, Control Schemes for any platform",
+      "category": "game_development",
+      "new": true
+    },
+    {
+      "name": "manage_ui",
+      "description": "Canvas, UI elements, layouts, and UI interactions",
+      "category": "game_development",
+      "new": true
+    },
+    {
       "name": "batch_execute",
-      "description": "Execute multiple Unity operations in a single batch"
-    },
-    {
-      "name": "debug_request_context",
-      "description": "Debug and inspect MCP request context"
-    },
-    {
-      "name": "execute_custom_tool",
-      "description": "Execute custom Unity Editor tools registered by the project"
-    },
-    {
-      "name": "execute_menu_item",
-      "description": "Execute Unity Editor menu items"
-    },
-    {
-      "name": "find_gameobjects",
-      "description": "Find GameObjects in the scene by various criteria"
-    },
-    {
-      "name": "find_in_file",
-      "description": "Search for content within Unity project files"
+      "description": "Execute multiple Unity operations in a single batch (10-100x faster)",
+      "category": "core"
     },
     {
       "name": "manage_asset",
-      "description": "Create, modify, search, and organize Unity assets"
+      "description": "Create, modify, search, and organize Unity assets",
+      "category": "core"
     },
     {
       "name": "manage_components",
-      "description": "Add, remove, and configure GameObject components"
+      "description": "Add, remove, and configure GameObject components",
+      "category": "core"
     },
     {
       "name": "manage_editor",
-      "description": "Control Unity Editor state, play mode, and preferences"
+      "description": "Control Unity Editor state, play mode, and preferences",
+      "category": "core"
     },
     {
       "name": "manage_gameobject",
-      "description": "Create, modify, transform, and delete GameObjects"
+      "description": "Create, modify, transform, and delete GameObjects",
+      "category": "core"
     },
     {
       "name": "manage_material",
-      "description": "Create and modify Unity materials and shaders"
+      "description": "Create and modify Unity materials and shaders",
+      "category": "core"
     },
     {
       "name": "manage_prefabs",
-      "description": "Create, instantiate, unpack, and modify prefabs"
+      "description": "Create, instantiate, unpack, and modify prefabs",
+      "category": "core"
     },
     {
       "name": "manage_scene",
-      "description": "Load, save, query hierarchy, and manage Unity scenes"
+      "description": "Load, save, query hierarchy, and manage Unity scenes",
+      "category": "core"
     },
     {
       "name": "manage_script",
-      "description": "Create, read, and modify C# scripts"
+      "description": "Create, read, and modify C# scripts",
+      "category": "core"
     },
     {
       "name": "manage_scriptable_object",
-      "description": "Create and modify ScriptableObjects"
+      "description": "Create and modify ScriptableObjects",
+      "category": "core"
     },
     {
       "name": "manage_shader",
-      "description": "Work with Unity shaders"
+      "description": "Work with Unity shaders",
+      "category": "core"
     },
     {
       "name": "manage_vfx",
-      "description": "Manage Visual Effects, particle systems, and trails"
+      "description": "Manage Visual Effects, particle systems, and trails",
+      "category": "core"
     },
     {
       "name": "read_console",
-      "description": "Read Unity Editor console output (logs, warnings, errors)"
+      "description": "Read Unity Editor console output (logs, warnings, errors)",
+      "category": "core"
     },
     {
       "name": "refresh_unity",
-      "description": "Refresh Unity Editor asset database"
+      "description": "Refresh Unity Editor asset database",
+      "category": "core"
     },
     {
       "name": "run_tests",
-      "description": "Run Unity Test Framework tests"
+      "description": "Run Unity Test Framework tests",
+      "category": "core"
     },
     {
-      "name": "get_test_job",
-      "description": "Get status of async test job"
+      "name": "find_gameobjects",
+      "description": "Find GameObjects in the scene by various criteria",
+      "category": "core"
     },
     {
       "name": "script_apply_edits",
-      "description": "Apply code edits to C# scripts with validation"
-    },
-    {
-      "name": "set_active_instance",
-      "description": "Set the active Unity Editor instance for multi-instance workflows"
-    },
-    {
-      "name": "apply_text_edits",
-      "description": "Apply text edits to script content"
-    },
-    {
-      "name": "create_script",
-      "description": "Create new C# scripts"
-    },
-    {
-      "name": "delete_script",
-      "description": "Delete C# scripts"
+      "description": "Apply code edits to C# scripts with validation",
+      "category": "core"
     },
     {
       "name": "validate_script",
-      "description": "Validate C# script syntax and compilation"
+      "description": "Validate C# script syntax and compilation",
+      "category": "core"
     },
     {
-      "name": "manage_script_capabilities",
-      "description": "Query script management capabilities"
-    },
-    {
-      "name": "get_sha",
-      "description": "Get SHA hash of script content"
+      "name": "create_script",
+      "description": "Create new C# scripts",
+      "category": "core"
     }
   ]
 }

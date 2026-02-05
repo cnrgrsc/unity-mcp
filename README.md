@@ -1,249 +1,412 @@
-<img width="676" height="380" alt="DevBridge" src="docs/images/devbridge-logo.png" />
-
 <div align="center">
+
+<img width="676" height="380" alt="DevBridge" src="docs/images/devbridge-logo.png" />
 
 # 🌉 DevBridge
 
-### AI-Powered Unity Development Toolkit
+### The Most Powerful AI-to-Unity Bridge
 
-**Connect your AI assistant directly to Unity Editor for next-level game development**
+**Transform your Unity development with AI. Create complete games, systems, and features in minutes.**
 
 [![GitHub](https://img.shields.io/badge/GitHub-cnrgrsc-181717?style=for-the-badge&logo=github)](https://github.com/cnrgrsc/unity-mcp)
 [![Unity](https://img.shields.io/badge/Unity-2021.3+-000000?style=for-the-badge&logo=unity)](https://unity.com/releases/editor/archive)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![MCP](https://img.shields.io/badge/MCP-Enabled-8B5CF6?style=for-the-badge)](https://modelcontextprotocol.io)
+[![Tools](https://img.shields.io/badge/Tools-28+-FF6B6B?style=for-the-badge)](https://github.com/cnrgrsc/unity-mcp)
 
-[🚀 Quick Start](#-quick-start) • [✨ Features](#-features) • [📖 Tools Reference](#-tools-reference) • [🤝 Contributing](#-contributing)
+[🚀 Installation](#-installation) • [⚡ Quick Start](#-quick-start) • [🛠️ All Tools](#%EF%B8%8F-complete-tool-reference) • [💡 Examples](#-usage-examples)
 
 </div>
 
 ---
 
-## 🎯 What is DevBridge?
+## 🎯 Why DevBridge?
 
-**DevBridge** is an advanced AI bridge that connects your favorite AI assistants (Claude, Cursor, VS Code, Gemini, etc.) to Unity Editor via the [Model Context Protocol](https://modelcontextprotocol.io). It provides **28+ specialized tools** for complete game development automation.
+DevBridge isn't just another Unity plugin. It's **the bridge between AI and game development** — giving AI assistants like Claude, Cursor, and VS Code Copilot **direct control** over Unity Editor.
 
-> 💡 **Based on [MCP for Unity](https://github.com/CoplayDev/unity-mcp) by CoplayDev** — enhanced with game development superpowers!
+### What Can AI Do With DevBridge?
+
+| Without DevBridge | With DevBridge |
+|-------------------|----------------|
+| AI writes code, you copy-paste | AI **directly creates** GameObjects, scripts, prefabs |
+| Manual scene setup | AI **builds entire scenes** with physics, lighting, navigation |
+| Hours of UI creation | AI **generates complete UI** with Canvas, buttons, layouts |
+| Tedious asset configuration | AI **handles materials, textures, audio** automatically |
+| Platform builds manually | AI **switches platforms, configures builds, exports** |
+
+> 💡 **Based on [MCP for Unity](https://github.com/CoplayDev/unity-mcp)** — Extended with **28+ specialized tools** for complete game development.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Installation
 
 ### Prerequisites
 
-| Requirement | Link |
-|-------------|------|
-| **Unity 2021.3 LTS+** | [Download](https://unity.com/download) |
-| **Python 3.10+** | [Download](https://www.python.org/downloads/) |
-| **uv** (Python package manager) | [Install](https://docs.astral.sh/uv/getting-started/installation/) |
-| **MCP Client** | Claude Desktop / Cursor / VS Code / Windsurf |
+Before installing DevBridge, ensure you have:
 
-### 1️⃣ Install Unity Package
+| Requirement | Version | Installation |
+|-------------|---------|--------------|
+| **Unity** | 2021.3 LTS or newer | [Download Unity Hub](https://unity.com/download) |
+| **Python** | 3.10+ | [Download Python](https://www.python.org/downloads/) |
+| **uv** | Latest | See below |
+| **MCP Client** | Any | Claude Desktop / Cursor / VS Code |
 
-Open Unity → `Window > Package Manager > + > Add package from git URL...`
+#### Installing uv (Python Package Manager)
+
+**Windows (PowerShell):**
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**macOS/Linux:**
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+---
+
+### Step 1: Install Unity Package
+
+Open your Unity project, then:
+
+1. Go to **Window → Package Manager**
+2. Click the **+** button (top-left)
+3. Select **"Add package from git URL..."**
+4. Paste this URL:
 
 ```
 https://github.com/cnrgrsc/unity-mcp.git?path=/MCPForUnity#beta
 ```
 
-### 2️⃣ Start the Server
+5. Click **Add** and wait for installation
 
-1. In Unity: `Window > DevBridge`
-2. Click **Start Server** 
-3. Select your MCP Client and click **Configure**
-4. Look for 🟢 **Connected ✓**
-
-### 3️⃣ Start Building!
-
-Try these prompts with your AI:
-- *"Create a player with physics-based movement"*
-- *"Add a navigation system with AI pathfinding"*
-- *"Build a complete UI menu with animations"*
-- *"Create an audio manager with 3D spatial sound"*
+> ✅ The package will appear as "DevBridge" in your Package Manager
 
 ---
 
-## ✨ Features
+### Step 2: Configure Your AI Client
 
-DevBridge includes **28+ specialized tools** for complete Unity game development:
+#### For Claude Desktop
 
-### 🎮 Core Game Development
+1. In Unity: **Window → DevBridge**
+2. Click **"Start Server"**
+3. Select **"Claude Desktop"** from the dropdown
+4. Click **"Configure"** — this automatically updates your Claude config
+5. **Restart Claude Desktop**
+6. Look for 🟢 **Connected ✓** in Unity
 
-| Tool | Description |
-|------|-------------|
-| `manage_gameobject` | Create, modify, delete GameObjects |
-| `manage_scene` | Scene management and hierarchy |
-| `manage_prefabs` | Prefab creation and variants |
-| `manage_components` | Add/remove/configure components |
+#### For Cursor / VS Code
 
-### ⚡ Physics & Navigation
+1. In Unity: **Window → DevBridge**
+2. Click **"Start Server"**
+3. Select your editor from the dropdown
+4. Click **"Copy Config"** to get the MCP configuration
+5. Add to your editor's MCP settings
+6. Restart your editor
 
-| Tool | Description |
-|------|-------------|
-| `manage_physics` | Rigidbody, Colliders, Joints, Raycasting |
-| `manage_navigation` | NavMesh, AI Agents, Pathfinding |
-| `manage_2d` | Sprites, Tilemaps, 2D Physics |
+#### Manual Configuration
 
-### 🎨 Graphics & Visual
+If automatic setup doesn't work, add this to your MCP config:
 
-| Tool | Description |
-|------|-------------|
-| `manage_material` | Materials and shaders |
-| `manage_texture` | Texture import and settings |
-| `manage_lighting` | Lights, Ambient, Fog, Bake |
-| `manage_terrain` | Terrain creation and painting |
-| `manage_vfx` | Particle systems and effects |
-| `manage_shader` | Shader creation and modification |
+```json
+{
+  "mcpServers": {
+    "devbridge": {
+      "command": "uvx",
+      "args": ["devbridge"]
+    }
+  }
+}
+```
 
-### 🎬 Animation & Camera
-
-| Tool | Description |
-|------|-------------|
-| `manage_animation` | Animators, Clips, State Machines |
-| `manage_cinemachine` | Virtual Cameras, Dolly, Follow ⚠️ |
-| `manage_timeline` | Cinematic sequences ⚠️ |
-
-### 🔊 Audio & Input
-
-| Tool | Description |
-|------|-------------|
-| `manage_audio` | Audio Sources, Mixers, 3D Sound |
-| `manage_input` | Input System, Action Maps |
-
-### 🖥️ UI & Scripting
-
-| Tool | Description |
-|------|-------------|
-| `manage_ui` | Canvas, UI Elements, Layouts |
-| `manage_script` | C# script generation |
-| `manage_scriptable_object` | ScriptableObject creation |
-
-### 🔨 Pro Tools
-
-| Tool | Description |
-|------|-------------|
-| `manage_probuilder` | 3D mesh modeling ⚠️ |
-| `manage_build` | Build settings, platforms, deployment |
-| `manage_localization` | Multi-language support ⚠️ |
-
-### 🛠️ Editor & Utilities
-
-| Tool | Description |
-|------|-------------|
-| `manage_editor` | Editor preferences and windows |
-| `manage_asset` | Asset import and management |
-| `read_console` | Read Unity console logs |
-| `refresh_unity` | Force asset refresh |
-| `run_tests` | Run unit tests |
-| `batch_execute` | Execute multiple commands |
-
-> ⚠️ = Requires optional Unity package (see [Optional Packages](#optional-packages))
+**Config file locations:**
+- **Claude Desktop (Windows):** `%APPDATA%\Claude\claude_desktop_config.json`
+- **Claude Desktop (macOS):** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Cursor:** `.cursor/mcp.json` in your project
+- **VS Code:** Check MCP extension settings
 
 ---
 
-## 📖 Tools Reference
+### Step 3: Verify Connection
 
-### Example Commands
+1. Open your AI assistant
+2. You should see DevBridge tools available
+3. Try: *"List all GameObjects in the scene"*
+4. If it works, you're connected! 🎉
 
-```bash
-# Physics
-"Add Rigidbody to Player with mass 2 and gravity enabled"
-"Create a BoxCollider on Enemy with trigger enabled"
+---
 
-# Navigation
-"Bake NavMesh for the scene"
-"Add NavMeshAgent to Enemy with speed 5"
+## ⚡ Quick Start
 
-# 2D
-"Create a sprite from Assets/Sprites/hero.png"
-"Add Rigidbody2D to Player with gravity scale 2"
-"Create a Tilemap named Ground"
+Once connected, try these commands with your AI:
 
-# Lighting
-"Create Point light at position (5, 3, 0) with blue color"
-"Enable fog with linear mode, distance 10-100"
-
-# Terrain
-"Create terrain 1000x1000 with height 600"
-"Add grass texture to terrain"
-
-# Animation
-"Create Animator Controller named PlayerController"
-"Add animation clip Walk to Player"
-
-# UI
-"Create Canvas with UI Scale Mode"
-"Add Button named StartButton with text 'Start Game'"
-
-# Camera
-"Create virtual camera following Player"
-"Set camera FOV to 60"
-
-# Audio
-"Add AudioSource to Player with 3D spatial blend"
-"Create AudioMixer named GameMixer"
-
-# Build
-"Switch platform to Android"
-"Add scene to build: Assets/Scenes/Level1.unity"
-"Set product name to MyGame, version 1.0.0"
+```
+"Create a Player GameObject with Rigidbody and CapsuleCollider"
+"Add a NavMeshAgent to Enemy and set speed to 5"
+"Create a Canvas with a Start Button and Quit Button"
+"Set up point lights around the scene for atmospheric lighting"
+"Build the game for Windows"
 ```
 
 ---
 
-## ⚡ Optional Packages
+## 🛠️ Complete Tool Reference
 
-Some tools require additional Unity packages. Add these scripting defines in Project Settings > Player:
+DevBridge provides **28+ specialized tools** organized by category:
 
-| Package | Scripting Define | Install Command |
-|---------|------------------|-----------------|
-| **ProBuilder** | `PROBUILDER_ENABLED` | `com.unity.probuilder` |
-| **Cinemachine** | `CINEMACHINE_ENABLED` | `com.unity.cinemachine` |
-| **Timeline** | `TIMELINE_ENABLED` | `com.unity.timeline` |
-| **Localization** | `LOCALIZATION_ENABLED` | `com.unity.localization` |
+### 🎮 Core GameObjects
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_gameobject` | create, delete, duplicate, find, modify | Full GameObject lifecycle |
+| `manage_scene` | open, save, create, list, get_hierarchy | Scene management |
+| `manage_prefabs` | create, instantiate, apply, unpack | Prefab workflow |
+| `manage_components` | add, remove, get, set, list | Component manipulation |
+| `find_gameobjects` | by_name, by_tag, by_layer, by_component | Advanced searching |
+
+### ⚡ Physics System
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_physics` | rigidbody_add, collider_add, joint_add, raycast | Complete 3D physics |
+| `manage_2d` | rigidbody2d_add, collider2d_add, tilemap_create | 2D game physics |
+
+### 🗺️ Navigation & AI
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_navigation` | bake_navmesh, agent_add, obstacle_add, set_destination | NavMesh & pathfinding |
+
+### 🎨 Graphics & Rendering
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_material` | create, assign, set_property, set_shader | Material control |
+| `manage_texture` | import, configure, set_settings | Texture management |
+| `manage_lighting` | light_create, ambient_set, fog_set, bake | Lighting system |
+| `manage_terrain` | create, sculpt, paint_texture, add_trees | Terrain tools |
+| `manage_shader` | create, modify, get_properties | Shader access |
+| `manage_vfx` | create_particle, configure, play, stop | Particle effects |
+
+### 🎬 Animation & Cinematics
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_animation` | create_controller, add_clip, set_parameter | Animation system |
+| `manage_cinemachine` | vcam_create, set_follow, set_lookat ⚠️ | Virtual cameras |
+| `manage_timeline` | create, add_track, playback ⚠️ | Cutscenes & sequences |
+
+### 🔊 Audio System
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_audio` | source_add, clip_play, mixer_create, 3d_configure | Complete audio |
+
+### 🎮 Input System
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_input` | action_map_create, binding_add, scheme_create | New Input System |
+
+### 🖥️ UI System
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_ui` | canvas_create, button_add, text_add, layout | Complete UI toolkit |
+
+### 📝 Scripting
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_script` | create, modify, add_method, add_field | C# code generation |
+| `manage_scriptable_object` | create, set_field, list | ScriptableObject support |
+
+### 🔨 Pro Tools
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_probuilder` | create_shape, extrude, bevel ⚠️ | 3D modeling |
+| `manage_build` | set_platform, add_scene, execute, player_settings | Build & deploy |
+| `manage_localization` | locale_add, table_create, entry_add ⚠️ | Multi-language |
+
+### 🛠️ Editor Utilities
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_editor` | selection_get, focus, preferences | Editor control |
+| `manage_asset` | import, move, rename, delete | Asset management |
+| `read_console` | get_logs, clear, filter | Console access |
+| `refresh_unity` | refresh_assets, recompile | Force refresh |
+| `run_tests` | run_all, run_category | Test runner |
+| `batch_execute` | execute_multiple | Batch operations |
+
+> ⚠️ = Requires optional Unity package. See [Optional Packages](#-optional-packages).
+
+---
+
+## 💡 Usage Examples
+
+### Create a Complete Player Controller
+
+```
+"Create a Player GameObject at origin with:
+- Rigidbody (mass 1, drag 0.5, freeze rotation X and Z)
+- CapsuleCollider (height 2, radius 0.5)
+- A new C# script called PlayerController with movement using Input System"
+```
+
+### Build a UI Menu
+
+```
+"Create a main menu UI with:
+- Canvas using Screen Space Overlay
+- Title text saying 'My Game' at the top
+- Start Game button in the center
+- Settings and Quit buttons below
+- All buttons with hover effects"
+```
+
+### Set Up Scene Lighting
+
+```
+"Set up lighting for an indoor scene:
+- Ambient color to warm orange (#FFE4C4)
+- Main directional light at 45 degrees, soft shadows
+- 4 point lights at corners with blue tint
+- Enable fog with exponential falloff"
+```
+
+### Configure Build Settings
+
+```
+"Prepare the game for Android release:
+- Switch platform to Android
+- Set package name to com.mycompany.mygame
+- Set version to 1.0.0
+- Add all scenes from Assets/Scenes to build
+- Enable development build with debugging"
+```
+
+### Create Navigation System
+
+```
+"Set up navigation for the level:
+- Bake NavMesh for all static geometry
+- Add NavMeshAgent to all Enemy objects
+- Set Enemy speed to 4, acceleration to 8
+- Add NavMeshObstacle to all Barrel prefabs"
+```
+
+---
+
+## 📦 Optional Packages
+
+Some tools require additional Unity packages. Install via Package Manager:
+
+| Feature | Package | Install | Scripting Define |
+|---------|---------|---------|------------------|
+| **ProBuilder** | `com.unity.probuilder` | Package Manager | `PROBUILDER_ENABLED` |
+| **Cinemachine** | `com.unity.cinemachine` | Package Manager | `CINEMACHINE_ENABLED` |
+| **Timeline** | `com.unity.timeline` | Package Manager | `TIMELINE_ENABLED` |
+| **Localization** | `com.unity.localization` | Package Manager | `LOCALIZATION_ENABLED` |
+
+**To add scripting defines:**
+1. Go to **Edit → Project Settings → Player**
+2. Find **Scripting Define Symbols**
+3. Add the required define (e.g., `CINEMACHINE_ENABLED`)
+4. Click **Apply**
 
 ---
 
 ## 🏗️ Architecture
 
 ```
-┌─────────────────┐     MCP Protocol     ┌─────────────────┐
-│   AI Assistant  │◄───────────────────►│  Python Server  │
-│ (Claude, etc.)  │                      │   (FastMCP)     │
-└─────────────────┘                      └────────┬────────┘
-                                                  │ HTTP
-                                                  ▼
-                                         ┌─────────────────┐
-                                         │  Unity Editor   │
-                                         │  (C# Handlers)  │
-                                         └─────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│                        AI Assistant                          │
+│              (Claude / Cursor / VS Code / Gemini)            │
+└─────────────────────────┬────────────────────────────────────┘
+                          │ MCP Protocol (stdio)
+                          ▼
+┌──────────────────────────────────────────────────────────────┐
+│                     DevBridge Server                          │
+│                    (Python + FastMCP)                         │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐            │
+│  │ 28+ Tools   │ │  Transport  │ │   Router    │            │
+│  └─────────────┘ └─────────────┘ └─────────────┘            │
+└─────────────────────────┬────────────────────────────────────┘
+                          │ HTTP (localhost:5010)
+                          ▼
+┌──────────────────────────────────────────────────────────────┐
+│                      Unity Editor                             │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐            │
+│  │  Handlers   │ │  Registry   │ │  Executor   │            │
+│  └─────────────┘ └─────────────┘ └─────────────┘            │
+└──────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## 🔧 Troubleshooting
+
+### Server won't start
+- Ensure Python 3.10+ is installed: `python --version`
+- Ensure uv is installed: `uv --version`
+- Check Unity console for errors
+
+### AI can't see DevBridge tools
+- Restart your AI client after configuration
+- Check if server shows 🟢 Connected in Unity
+- Verify MCP config file syntax
+
+### Commands fail
+- Make sure Unity Editor is focused/active
+- Check Unity console for detailed errors
+- Ensure required packages are installed for optional tools
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
+We welcome contributions! Here's how:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. **Fork** the repository
+2. **Create** a feature branch: `git checkout -b feature/amazing-feature`
+3. **Commit** your changes: `git commit -m 'Add amazing feature'`
+4. **Push** to GitHub: `git push origin feature/amazing-feature`
+5. **Open** a Pull Request
+
+### Development Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/cnrgrsc/unity-mcp.git
+
+# Navigate to server
+cd unity-mcp/Server
+
+# Install dependencies
+uv sync
+
+# Run server locally
+uv run devbridge
+```
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
 
-**Made with ❤️ for Unity Developers**
+## ⭐ Star This Project!
 
-[⭐ Star this repo](https://github.com/cnrgrsc/unity-mcp) if you find it useful!
+If DevBridge helps your Unity development, please consider giving it a star!
+
+[![GitHub stars](https://img.shields.io/github/stars/cnrgrsc/unity-mcp?style=social)](https://github.com/cnrgrsc/unity-mcp)
+
+**Made with ❤️ for Unity Developers Worldwide**
 
 </div>

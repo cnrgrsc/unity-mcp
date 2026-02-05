@@ -1,13 +1,11 @@
 [project]
-name = "mcpforunityserver"
-version = "9.3.1"
-description = "MCP for Unity Server: A Unity package for Unity Editor integration via the Model Context Protocol (MCP)."
+name = "devbridge"
+version = "1.0.0"
+description = "DevBridge: AI-Powered Unity Development Toolkit. Connect AI assistants to Unity Editor via MCP."
 readme = "README.md"
 license = "MIT"
 authors = [
-    {name = "Marcus Sanatan", email = "msanatan@gmail.com"},
-    {name = "David Sarno", email = "david.sarno@gmail.com"},
-    {name = "Wu Shutong", email = "martinwfire@gmail.com"}
+    {name = "cnrgrsc", email = "cnrgrsc@gmail.com"}
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",

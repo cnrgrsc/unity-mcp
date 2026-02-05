@@ -625,7 +625,7 @@ namespace MCPForUnity.Editor.Windows.Components.ClientConfig
 
             if (useBetaServer)
             {
-                return "mcpforunityserver>=0.0.0a0";
+                return "devbridge>=0.0.0a0";
             }
 
             // Standard mode uses exact version from package.json

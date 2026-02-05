@@ -27,7 +27,7 @@
       "command": "uvx",
       "args": [
         "--from",
-        "mcpforunityserver",
+        "devbridge",
         "mcp-for-unity"
       ],
       "env": {}

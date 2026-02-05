@@ -941,7 +941,7 @@ namespace MCPForUnity.Editor.Clients
 
             if (useBetaServer)
             {
-                return "mcpforunityserver>=0.0.0a0";
+                return "devbridge>=0.0.0a0";
             }
 
             // Standard mode uses exact version from package.json
@@ -950,7 +950,7 @@ namespace MCPForUnity.Editor.Clients
 
         /// <summary>
         /// Extracts the package source (--from argument value) from claude mcp get output.
-        /// The output format includes args like: --from "mcpforunityserver==9.0.1"
+        /// The output format includes args like: --from "devbridge==9.0.1"
         /// </summary>
         private static string ExtractPackageSourceFromCliOutput(string cliOutput)
         {

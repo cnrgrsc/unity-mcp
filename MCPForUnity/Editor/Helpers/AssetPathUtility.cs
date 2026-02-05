@@ -212,15 +212,16 @@ namespace MCPForUnity.Editor.Helpers
                 return sourceOverride;
             }
 
-            // Default to PyPI package (avoids Windows long path issues with git clone)
+            // DevBridge: Default to local installation instead of PyPI
+            // Use local path for development, or HTTP transport for production
             string version = GetPackageVersion();
             if (version == "unknown")
             {
-                // Fall back to latest PyPI version so configs remain valid in test scenarios
-                return "mcpforunityserver";
+                // Fall back to devbridge local package
+                return "devbridge";
             }
 
-            return $"mcpforunityserver=={version}";
+            return $"devbridge=={version}";
         }
 
         /// <summary>
@@ -282,9 +283,9 @@ namespace MCPForUnity.Editor.Helpers
             // Beta server mode: use prerelease from PyPI
             if (useBetaServer)
             {
-                // Use --prerelease explicit with version specifier to only get prereleases of our package,
-                // not of dependencies (which can be broken on PyPI).
-                string fromValue = quoteFromPath ? "\"mcpforunityserver>=0.0.0a0\"" : "mcpforunityserver>=0.0.0a0";
+                // DevBridge: Use prerelease with version specifier
+                // For local development, recommend HTTP transport instead
+                string fromValue = quoteFromPath ? "\"devbridge>=0.0.0a0\"" : "devbridge>=0.0.0a0";
                 return $"--prerelease explicit --from {fromValue}";
             }
 
@@ -339,7 +340,7 @@ namespace MCPForUnity.Editor.Helpers
                 args.Add("--prerelease");
                 args.Add("explicit");
                 args.Add("--from");
-                args.Add("mcpforunityserver>=0.0.0a0");
+                args.Add("devbridge>=0.0.0a0");
                 return args;
             }
 

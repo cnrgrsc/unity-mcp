@@ -118,14 +118,63 @@ Use `batch_execute` for **10-100x faster** multi-object operations!
 
 ---
 
-## 📖 Documentation
+## 📖 Installation Guide
 
-<details>
-<summary><strong>Manual Configuration</strong></summary>
+### Method 1: HTTP Transport (Recommended)
 
-If auto-setup doesn't work, add this to your MCP client's config:
+<details open>
+<summary><strong>Step 1: Install Unity Package</strong></summary>
 
-**HTTP (Claude Desktop, Cursor, Windsurf):**
+1. Open Unity → `Window > Package Manager`
+2. Click `+` → `Add package from git URL...`
+3. Paste:
+```
+https://github.com/cnrgrsc/unity-mcp.git?path=/MCPForUnity#beta
+```
+4. Click **Add** and wait for installation
+</details>
+
+<details open>
+<summary><strong>Step 2: Install Python Dependencies</strong></summary>
+
+```powershell
+# Clone the repository
+git clone https://github.com/cnrgrsc/unity-mcp.git
+cd unity-mcp/Server
+
+# Install dependencies (choose one)
+uv pip install -e . --system     # With uv (recommended)
+# OR
+pip install -e .                  # With pip
+```
+</details>
+
+<details open>
+<summary><strong>Step 3: Start the Server</strong></summary>
+
+```powershell
+cd unity-mcp/Server
+python -m main --transport http
+```
+
+You should see: `Application startup complete` - Server running on `localhost:8080`
+</details>
+
+<details open>
+<summary><strong>Step 4: Configure Your AI Client</strong></summary>
+
+#### Antigravity / Gemini
+```json
+{
+  "mcpServers": {
+    "devBridge": {
+      "serverUrl": "http://localhost:8080/mcp"
+    }
+  }
+}
+```
+
+#### Claude Desktop / Cursor / Windsurf
 ```json
 {
   "mcpServers": {
@@ -136,7 +185,7 @@ If auto-setup doesn't work, add this to your MCP client's config:
 }
 ```
 
-**VS Code:**
+#### VS Code Copilot
 ```json
 {
   "servers": {
@@ -148,6 +197,37 @@ If auto-setup doesn't work, add this to your MCP client's config:
 }
 ```
 </details>
+
+---
+
+### Method 2: Stdio Transport (Alternative)
+
+<details>
+<summary><strong>Stdio Configuration</strong></summary>
+
+If you prefer stdio transport, configure your client like this:
+
+```json
+{
+  "mcpServers": {
+    "devBridge": {
+      "command": "python",
+      "args": [
+        "C:/path/to/unity-mcp/Server/main.py",
+        "--transport",
+        "stdio"
+      ]
+    }
+  }
+}
+```
+
+Replace `C:/path/to/` with your actual path.
+</details>
+
+---
+
+## 🔧 Additional Configuration
 
 <details>
 <summary><strong>Multiple Unity Instances</strong></summary>
@@ -162,9 +242,13 @@ DevBridge supports multiple Unity Editor instances:
 <details>
 <summary><strong>Troubleshooting</strong></summary>
 
-- **Unity Bridge Not Connecting:** Check `Window > DevBridge` status
-- **Server Not Starting:** Run `uv --version` to verify installation
-- **Client Not Connecting:** Ensure HTTP server is running on port 8080
+| Problem | Solution |
+|---------|----------|
+| **Server not starting** | Run `python --version` (need 3.10+) and `uv --version` |
+| **"No version of mcpforunityserver"** | Use HTTP method, not PyPI package |
+| **"serverUrl must be specified"** | Use `serverUrl` instead of `url` for Antigravity |
+| **Unity Bridge not connecting** | Check `Window > MCP For Unity` and click **Start Server** |
+| **Port 8080 in use** | Kill other processes or change port in server config |
 </details>
 
 ---

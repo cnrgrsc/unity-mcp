@@ -12,7 +12,7 @@
 [![Unity](https://img.shields.io/badge/Unity-2021.3+-000000?style=for-the-badge&logo=unity)](https://unity.com/releases/editor/archive)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![Tools](https://img.shields.io/badge/Tools-28+-FF6B6B?style=for-the-badge)](https://github.com/cnrgrsc/unity-mcp)
+[![Tools](https://img.shields.io/badge/Tools-35+-FF6B6B?style=for-the-badge)](https://github.com/cnrgrsc/unity-mcp)
 
 [🚀 Installation](#-installation) • [⚡ Quick Start](#-quick-start) • [🛠️ All Tools](#%EF%B8%8F-complete-tool-reference) • [💡 Examples](#-usage-examples)
 
@@ -34,7 +34,7 @@ DevBridge isn't just another Unity plugin. It's **the bridge between AI and game
 | Tedious asset configuration | AI **handles materials, textures, audio** automatically |
 | Platform builds manually | AI **switches platforms, configures builds, exports** |
 
-> 💡 **Based on [MCP for Unity](https://github.com/CoplayDev/unity-mcp)** — Extended with **28+ specialized tools** for complete game development.
+> 💡 **Based on [MCP for Unity](https://github.com/CoplayDev/unity-mcp)** — Extended with **35+ specialized tools** for complete game development.
 
 ---
 
@@ -152,7 +152,7 @@ Once connected, try these commands with your AI:
 
 ## 🛠️ Complete Tool Reference
 
-DevBridge provides **28+ specialized tools** organized by category:
+DevBridge provides **35+ specialized tools** organized by category:
 
 ### 🎮 Core GameObjects
 
@@ -226,8 +226,30 @@ DevBridge provides **28+ specialized tools** organized by category:
 | Tool | Actions | Description |
 |------|---------|-------------|
 | `manage_probuilder` | create_shape, extrude, bevel ⚠️ | 3D modeling |
-| `manage_build` | set_platform, add_scene, execute, player_settings | Build & deploy |
+| `manage_build` | set_platform, add_scene, execute, android_set_settings, ios_set_settings | Build & deploy |
 | `manage_localization` | locale_add, table_create, entry_add ⚠️ | Multi-language |
+
+### 💰 Monetization & Analytics
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_ads` | ads_initialize, show_banner, show_rewarded, iap_add_product | Unity Ads, AdMob, IAP |
+| `manage_analytics` | send_event, set_user_property, firebase_log_event | Analytics tracking |
+
+### 🌐 Multiplayer & Cloud
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_multiplayer` | setup_network_manager, add_network_object, create_rpc, create_lobby | Netcode & Lobby |
+| `manage_cloud` | auth_sign_in, save_data, load_data, config_fetch | Cloud Save, Auth, Remote Config |
+
+### 🤖 AI & Assets
+
+| Tool | Actions | Description |
+|------|---------|-------------|
+| `manage_addressables` | mark_addressable, create_group, build_content, load_asset | Asset bundles |
+| `manage_mlagents` | add_agent, configure_behavior, add_sensor, create_training_config | ML-Agents AI |
+| `manage_vcs` | git_status, git_commit, git_push, generate_gitignore | Git integration |
 
 ### 🛠️ Editor Utilities
 
